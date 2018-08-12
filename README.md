@@ -2,6 +2,8 @@
 
 ![alt text](https://i.imgur.com/hmSFrFv.png)
 
+[**DEMO**](https://towhidkashem.github.io/react-calendar/#/)
+
 This was meant to be completed in 1.5hrs but that's near impossible to do especially if you want to demo semi decent code. I took a great deal longer (a little over 9hrs) to finish this. If there was more time I would have liked to:
 
 - Enable CSS modules
