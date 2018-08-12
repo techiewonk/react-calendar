@@ -78,43 +78,41 @@ class Day extends React.Component {
 
     return (
       <article className={cssClasses}>
-        <div class="inner">
-          {!this.props.editDay && (
-            <button
-              className="btn-new-reminder"
-              onClick={() => this.props.handleSetEditDay(this.props.day)}
-            >
-              <i className="fas fa-plus-circle" />
-            </button>
-          )}
+        {!this.props.editDay && (
+          <button
+            className="btn-new-reminder"
+            onClick={() => this.props.handleSetEditDay(this.props.day)}
+          >
+            <i className="fas fa-plus-circle" />
+          </button>
+        )}
 
-          {this.props.editDay === this.props.day ? (
-            <ReminderForm
-              reminder={this.state.editReminder}
-              handleSetColor={this.handleSetColor}
-              handleSetEditDay={this.props.handleSetEditDay}
-              handleCreateUpdateReminder={this.handleCreateUpdateReminder}
-              defaultColor={defaultColor}
-            />
-          ) : (
-            <React.Fragment>
-              <header>{this.props.day}</header>
+        {this.props.editDay === this.props.day ? (
+          <ReminderForm
+            reminder={this.state.editReminder}
+            handleSetColor={this.handleSetColor}
+            handleSetEditDay={this.props.handleSetEditDay}
+            handleCreateUpdateReminder={this.handleCreateUpdateReminder}
+            defaultColor={defaultColor}
+          />
+        ) : (
+          <React.Fragment>
+            <header>{this.props.day}</header>
 
-              {reminders.length
-                ? reminders.map((reminder, i) => {
-                    return (
-                      <Reminder
-                        key={i}
-                        reminder={reminder}
-                        handleSetEdit={this.handleSetEdit}
-                        handleDeleteReminder={this.handleDeleteReminder}
-                      />
-                    );
-                  })
-                : null}
-            </React.Fragment>
-          )}
-        </div>
+            {reminders.length
+              ? reminders.map((reminder, i) => {
+                  return (
+                    <Reminder
+                      key={i}
+                      reminder={reminder}
+                      handleSetEdit={this.handleSetEdit}
+                      handleDeleteReminder={this.handleDeleteReminder}
+                    />
+                  );
+                })
+              : null}
+          </React.Fragment>
+        )}
       </article>
     );
   }
